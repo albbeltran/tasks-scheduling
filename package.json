@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prisma:generate": "npx prisma generate --schema ./tasks-manager/prisma/schema.prisma",
+    "cp-prisma-client-config": "cp ./tasks-manager/src/lib/prisma.ts ./src/lib/prisma.ts",
+    "dev": "npm run cp-prisma-client-config && node --experimental-strip-types --env-file=.env --watch src/app.ts"
   },
   "repository": {
     "type": "git",
@@ -21,9 +23,13 @@
   "devDependencies": {
     "@types/amqplib": "^0.10.7",
     "@types/express": "^5.0.3",
+    "@types/node": "^22.15.30",
+    "prisma": "^6.9.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@prisma/client": "^6.9.0",
     "amqplib": "^0.10.8",
     "express": "^4.21.2"
   }
