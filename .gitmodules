@@ -1,0 +1,3 @@
+[submodule "tasks-manager-nextjs"]
+	path = tasks-manager-nextjs
+	url = https://github.com/albbeltran/tasks-scheduling-nextjs
