@@ -1,0 +1,30 @@
+{
+  "name": "tasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albbeltran/tasks-scheduling.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/albbeltran/tasks-scheduling/issues"
+  },
+  "homepage": "https://github.com/albbeltran/tasks-scheduling#readme",
+  "devDependencies": {
+    "@types/amqplib": "^0.10.7",
+    "@types/express": "^5.0.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.8",
+    "express": "^4.21.2"
+  }
+}
