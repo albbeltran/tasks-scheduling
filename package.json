@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --experimental-strip-types --env-file=.env --watch src/app.ts"
+    "dev": "node --experimental-strip-types --env-file=.env --watch src/app.ts",
+    "build": "tsc",
+    "postbuild": "cp -r src/generated dist/generated",
+    "start": "node dist/app.js"
   },
   "repository": {
     "type": "git",
@@ -13,7 +16,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "module",
   "bugs": {
     "url": "https://github.com/albbeltran/tasks-scheduling/issues"
   },

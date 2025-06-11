@@ -1,7 +1,7 @@
-import prisma from './lib/prisma.ts';
+import prisma from './lib/prisma.js';
 import amqp from "amqplib/callback_api.js";
 
-import { type tasks, task_status } from './generated/prisma/index.js';
+import { type tasks, task_status } from './generated/prisma/client';
 
 export interface TaskForScheduling extends tasks {
   remaining_time: number;

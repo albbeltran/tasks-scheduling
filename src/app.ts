@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import startConsumer, { checkHealth, stopConsumer } from './consumer.ts';
+import startConsumer, { checkHealth, stopConsumer } from './consumer.js';
 
 const app = express();
 app.use(cors())

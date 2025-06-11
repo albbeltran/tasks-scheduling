@@ -1,28 +1,34 @@
-FROM node:20-alpine AS base
+FROM node:20-alpine AS builder
+
+RUN apk add --no-cache openssl3 python3 make g++
 
 WORKDIR /app
 
 COPY package*.json ./
+
 RUN npm install
 
-COPY . .
+COPY prisma ./prisma
+COPY src ./src 
 
 RUN npx prisma generate
+
+COPY . . 
 
 RUN npm run build
 
 FROM node:20-alpine AS production
 
+RUN apk add --no-cache openssl3
+
 WORKDIR /app
 
-COPY --from=base /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
 
-COPY --from=base /app/dist ./dist
-
-ENV AMQP_URL=amqp://guest:guest@rabbitmq:5672
 ENV NODE_ENV=production
-
-CMD ["node", "dist/app.js"]
 
 EXPOSE 3000
 
+CMD ["node", "dist/app.js"]

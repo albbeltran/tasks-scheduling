@@ -1,5 +1,8 @@
 import amqp from "amqplib/callback_api.js";
-import { runScheduling } from './scheduler.ts';
+import { runScheduling } from './scheduler.js';
+
+const host = process.env.RABBITMQ_HOST || "rabbitmq";
+const port = process.env.RABBITMQ_PORT || 5672;
 
 let _connection: amqp.Connection | null = null;
 let _channel: amqp.ConfirmChannel | null = null;
@@ -7,7 +10,7 @@ let _channel: amqp.ConfirmChannel | null = null;
 export default async function startConsumer(): Promise<void> {
     return new Promise(async (resolve, reject) => {
         console.log('[AMQP] Attempting to connect to RabbitMQ...');
-        amqp.connect(process.env.AMQP_URL!, (connErr: any, connection: any) => {
+        amqp.connect(`amqp://${host}:${port}`, (connErr: any, connection: any) => {
             if (connErr) {
                 _connection = null;
                 _channel = null;
