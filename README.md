@@ -73,8 +73,25 @@ Si eso sucede, recargar la pagina '/scheduling'.
 
 ## Estructura del proyecto
 
-.
-├── src/              # Node.js backend (RabbitMQ consumer)
-├── tasks-manager/       # Next.js frontend (RabbitMQ producer)
-├── docker-compose.yml
-└── README.md
+| Directorio/Archivo | Descripción |
+| --- | --- |
+| docker-compose.yml | Configuración de los servicios Docker |
+| README.md | Documentación del proyecto |
+| src/ | Código del backend (consumidor) |
+| src/app.ts | Servidor Express principal |
+| src/consumer.ts | Consumidor de RabbitMQ |
+| src/scheduler.ts | Implementación del algoritmo SJF |
+| src/generated/ | Código generado por Prisma |
+| tasks-manager/ | Frontend (Next.js) |
+| tasks-manager/src/app/page.tsx | Página principal del frontend |
+| tasks-manager/src/components/TaskForm.tsx | Componente para crear tareas |
+| tasks-manager/src/components/TaskList.tsx | Componente para mostrar lista de tareas |
+| tasks-manager/src/components/SchedulingView.tsx | Componente para mostrar el orden de ejecución |
+| tasks-manager/src/api/ | Endpoints API del frontend |
+| tasks-manager/prisma/ | Esquema y migraciones de la base de datos del frontend |
+| tasks-manager/tsconfig.json | Configuración de TypeScript del frontend |
+| prisma/ | Esquema y migraciones de la base de datos del backend |
+| package.json | Dependencias y scripts del proyecto |
+| tsconfig.json | Configuración de TypeScript |
+| .env | Variables de entorno |
+| .gitignore | Archivos ignorados por git |
