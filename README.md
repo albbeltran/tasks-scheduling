@@ -89,8 +89,10 @@ Si eso sucede, recargar la pagina '/scheduling'.
 | tasks-manager/src/components/SchedulingView.tsx | Componente para mostrar el orden de ejecución |
 | tasks-manager/src/api/ | Endpoints API del frontend |
 | tasks-manager/prisma/ | Esquema y migraciones de la base de datos del frontend |
+| tasks-manager/Dockerfile | Dockerfile del frontend |
 | tasks-manager/tsconfig.json | Configuración de TypeScript del frontend |
 | prisma/ | Esquema y migraciones de la base de datos del backend |
+| Dockerfile | Dockerfile del backend |
 | package.json | Dependencias y scripts del proyecto |
 | tsconfig.json | Configuración de TypeScript |
 | .env | Variables de entorno |
