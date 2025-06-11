@@ -36,7 +36,7 @@ cd tasks-scheduling
 2. Iniciar los contenedores
 
 ```bash
-docker compose up -d
+docker compose up
 ```
 
 3. Iniciar Prisma
